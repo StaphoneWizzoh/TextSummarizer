@@ -9,7 +9,7 @@ class User(AbstractUser):
 class Summary(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     input_text = models.TextField()
-    input_file = models.FileField(upload_to="files/input/", default=None)
+    input_file = models.FileField(upload_to="files/input/", default=None, blank=True)
     generated_text = models.TextField(blank=True)
     generated_file = models.FileField( upload_to="files/generated/",default=None,blank=True )
     created_at = models.DateTimeField(auto_now_add=True)
