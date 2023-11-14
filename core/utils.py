@@ -3,6 +3,7 @@ from PyPDF2 import PdfReader, PdfWriter
 import os
 import json
 from django.conf import settings
+from reportlab.pdfgen import canvas
 
 base_dir = settings.BASE_DIR
 
@@ -13,7 +14,7 @@ def handle_upload(uploaded_file):
   file_path = os.path.join(base_dir + uploaded_file.name)
   
   with open(file_path, 'wb') as destination:
-    for chumk in uploaded_file.chunks():
+    for chunk in uploaded_file.chunks():
       destination.write(chunk)
       
   return file_path
@@ -44,25 +45,15 @@ def extract_and_generate(pdf_path):
   return summary
     
     
-# def generate_pdf(text,output_file_path):
-#   pdf_writer = PdfWriter()
-#   pdf_page = pdf_writer.add_page()
-#   pdf_page.setFont("Calibri", 14)
-#   lines = text.split('\n')
-#   y_position = 840 * 2
+def create_pdf(input_text,output_path):
+  pdf_canvas = canvas.Canvas(output_path)
+  pdf_canvas.setFont("Helvetica", 12)
+  lines = input_text.split("\n")
+  y_position = 750
   
-#   for line in lines:
-#     pdf_page.drawString(100,y_position, line)
-#     y_position -= 14
+  for line in lines:
+    pdf_canvas.drawString(100, y_position, line)
+    y_position -= 15
     
-#   with open(output_file_path, 'w') as output_file:
-#     pdf_writer.write(output_file)
-
-def generate_pdf(text, destination_path):
-  pdf_writer = PdfWriter()
-  pdf_page = pdf_writer.add_page()
-  pdf_page.set_font("Calibri", size=12)
-  pdf_page.cell(200,10, txt=text, ln=True)
-  
-  with open(destination_path, 'wb') as pdf_file:
-    pdf_writer.output(pdf_file)
+  pdf_canvas.save()
+  return
