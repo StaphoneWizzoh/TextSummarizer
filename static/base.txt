@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Summarizer - {% block head %}{% endblock head %}</title>
+    <!-- Favicons -->
+
+    <link rel="stylesheet" href="{% static 'css/landing.css'%}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/detail.css'%}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}" />
+    <style>
+        {%block style%}
+
+            {%endblock style%}
+    </style>
+</head>
+
+<body style="margin: 0 14px">
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="{% static 'assets/logo/lelek-picnics-bg.png' %}" alt="" style="max-height:100px">
+        </a>
+
+        <input type="checkbox" id="menu-bar" />
+        <label for="menu-bar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'landing' %}">Home</a></li>
+                <li>
+                    <a href="{% url 'summary_list' %}">Summary List</a>
+                </li>
+                <li><a href="#">How It Works</a></li>
+                <li>
+                    <a href="#">Book Now</a>
+                </li>
+                <li>
+                    <a href="#">Locations</a>
+                </li>
+                <li>
+                    <a href="#" style="font-size:18px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#">Tablescapes</a>
+                        </li>
+                        <li>
+                            <a href="#">Add-Ons</a>
+                        </li>
+
+                        <li><a href="#">Faqs</a></li>
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    {%block content%}{%endblock%}
+
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'assets/js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+    <script src="{% static 'assets/js/Basic-fancyBox-Gallery-myfancybox.js' %}"></script>
+    <script src="{% static 'assets/js/Filterable-Gallery-gallery-pt.js' %}"></script>
+    <script src="{% static 'assets/js/featured-products-slider-Featured-products-slider.js' %}"></script>
+    <script src="{% static 'assets/js/Navbar---Apple-navbar---apple.js' %}"></script>
+    <script src="{% static 'js/landing.js' %}" type="text/js"></script>
+</body>
+
+</html>

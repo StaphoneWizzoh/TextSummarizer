@@ -1,0 +1,67 @@
+.form .flex_direction{
+    display: flex;
+    flex-direction: row;
+}
+
+p input[type="text"]{
+    display: block;
+    margin-bottom: 10px;
+}
+
+p label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.nav p {
+    font-size: 1.75rem;
+    font-weight: bolder;
+}
+
+.body {
+    display: flex;
+}
+
+.body section {
+    margin: 0 0.75rem;
+}
+
+.form .flex_direction section textarea {
+    height: 75vh;
+    width: 48vw;
+    border-radius: 0.5rem;
+}
+
+.form .flex_direction section textarea:focus {
+    outline: none;
+    border: 0.125rem solid #2d7df6;
+    padding: 0.125rem;
+}
+
+.custom_h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.button {
+    background-color: #2d7df6;
+    border: 1px solid black;
+    border-radius: 0.125rem;
+    padding: 0.275rem;
+    color: #fff;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #438bf5;
+    border: 0.5px solid black;
+}
+
+.summary_btn {
+    align-self: center;
+    margin:.75rem .75rem 1rem 1rem;
+}
+
+.upload_btn{
+    margin: 0.75rem 0;
+}

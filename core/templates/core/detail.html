@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Detail</title>
+    <link rel="stylesheet" href="{% static 'css/detail.css'%}" type="text/css" />
+</head>
+
+<body class="body">
+    <h2>Generated Text View</h2>
+    <p>
+        Raw input text:
+    </p>
+    <textarea readonly cols="30" rows="10" class="textInput">{{summary.input_text}}</textarea>
+
+    <p>
+        Summarized text:
+    </p>
+    <textarea readonly cols="30" rows="10" class="textOutput" id="textOutput">{{summary.generated_text}}</textarea>
+
+    <button class="download_btn" id="download_btn">Download</button>
+
+    <a href="{% url 'landing' %}" style="margin-top: 0.25rem;">New Summary</a>
+
+    <script>
+        document.getElementById("download_btn").addEventListener("click", function () {
+            const text = document.getElementById("textOutput").value;
+            const blob = new Blob([text], { type: "text/plain" });
+            const downloadLink = document.createElement("a");
+            downloadLink.href = URL.createObjectURL(blob);
+            downloadLink.download = "Summary.txt";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        });
+    </script>
+
+</body>
+
+</html>

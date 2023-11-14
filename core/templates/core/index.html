@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summary</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css'%}" type="text/css" />
+    <style>
+        .alignment {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text {
+            text-align: center;
+        }
+
+        .guide {
+            font-size: 1.25rem;
+        }
+
+        textarea {
+            height: 46.5vh;
+            width: 65vw;
+            border-radius: 0.75rem;
+        }
+
+        textarea:focus {
+            outline: none;
+            border: 0.125rem solid #2d7df6;
+            padding: 0.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav text">
+        <p>Text Summary</p>
+    </nav>
+
+    <p class="text guide">
+        Either paste text in the text box below or alternatively upload a file.
+    </p>
+
+    <div class="alignment">
+        <form action="{% url 'landing' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="button summary_btn" type="submit">Create Summary</button>
+        </form>
+    </div>
+
+    <script src="{% static 'js/landing.js' %}" type="text/js"></script>
+</body>
+
+</html>

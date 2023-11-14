@@ -1,0 +1,6 @@
+env/*
+/media/*
+test.*
+sample.txt
+*.json
+.env

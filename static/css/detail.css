@@ -1,0 +1,56 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.body .textInput{
+    height: 20vh;
+    width: 65vw;
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+}
+
+.body .textOutput{
+    height: 29vh;
+    width: 65vw;
+    border-radius: 0.75rem;
+    padding: 0.45rem;
+}
+
+.body .textInput:focus {
+    outline: none;
+    border: 0.125rem solid #2d7df6;
+    padding: .45rem;
+}
+
+.body .textOutput:focus {
+    outline: none;
+    border: 0.125rem solid #391ff9;
+    padding: .45rem;
+}
+
+.body p{
+    font-weight: 600;
+}
+
+.download_btn{
+    display: inline;
+    padding: .125rem 0.25rem;
+    margin: .5rem  0;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border:.125rem solid #3498db;
+    color: #3498db;
+    border-radius: .3125rem;
+    transition: background-color 0.3s, color 0.3s;
+
+}
+
+.download_btn:hover{
+    background-color: #3498db;
+    color: white;
+}

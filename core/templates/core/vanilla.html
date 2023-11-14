@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}" type="text/css" />
+</head>
+
+<body>
+    <div class="body">
+        <form action="" method="post" id="rawForm" class="form">
+            {% csrf_token %}
+            <div class="flex_direction">
+                <section>
+
+                    <div class="custom_h2">Raw Input</div>
+                    <textarea name="textInput" id="textInput" cols="45" rows="15" required
+                        placeholder="Type or paste the text that you want to summarize in here."></textarea>
+                </section>
+                <!-- <section>
+                    <div class="custom_h2">File Upload</div>
+                    <p>Alternatively you can upload a document to be summarized.</p>
+                    <input type="file" name="fileInput" id="fileInput"> <br>
+                </section> -->
+                <button class="button summary_btn" type="submit" form="rawForm">Create Summary</button>
+            </div>
+
+            <!-- <button class="button summary_btn" type="submit" form="rawForm">Create Summary</button> -->
+            <section>
+                <div class="custom_h2">File Upload</div>
+                <p>Alternatively you can upload a document to be summarized.</p>
+                <input type="file" name="fileInput" id="fileInput"> <br>
+            </section>
+        </form>
+
+    </div>
+    <script src="{% static 'js/landing.js' %}" type="text/js"></script>
+
+</body>
+
+</html>
