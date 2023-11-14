@@ -1,9 +1,9 @@
-.form .flex_direction{
+.form .flex_direction {
     display: flex;
     flex-direction: row;
 }
 
-p input[type="text"]{
+p input[type="text"] {
     display: block;
     margin-bottom: 10px;
 }
@@ -13,9 +13,17 @@ p label {
     margin-bottom: 5px;
 }
 
+.nav {
+    width: 100vw;
+    background-blend-mode: normal;
+    box-shadow: 1px 1px 4px rgba(100, 100, 100, 0.85);
+    position: -webkit-sticky;
+}
+
 .nav p {
     font-size: 1.75rem;
     font-weight: bolder;
+    color: #3498db;
 }
 
 .body {
@@ -59,9 +67,9 @@ p label {
 
 .summary_btn {
     align-self: center;
-    margin:.75rem .75rem 1rem 1rem;
+    margin: 0.75rem 0rem;
 }
 
-.upload_btn{
+.upload_btn {
     margin: 0.75rem 0;
 }

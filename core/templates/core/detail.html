@@ -11,6 +11,7 @@
 
 <body class="body">
     <h2>Generated Text View</h2>
+    <a id="pdf_link" href="{{summary.generated_file.url}}"></a>
     <p>
         Raw input text:
     </p>
@@ -21,12 +22,17 @@
     </p>
     <textarea readonly cols="30" rows="10" class="textOutput" id="textOutput">{{summary.generated_text}}</textarea>
 
-    <button class="download_btn" id="download_btn">Download</button>
+    <div>
+        <button class="download_btn txt_btn" id="download_txt">Download TXT</button>
+        <button class="download_btn pdf_btn" id="download_pdf">Download PDF</button>
+    </div>
 
-    <a href="{% url 'landing' %}" style="margin-top: 0.25rem;">New Summary</a>
+
+
+    <a href="{% url 'landing' %}" style="margin-top: 0.25rem;" class="custom_link">New Summary</a>
 
     <script>
-        document.getElementById("download_btn").addEventListener("click", function () {
+        document.getElementById("download_txt").addEventListener("click", function () {
             const text = document.getElementById("textOutput").value;
             const blob = new Blob([text], { type: "text/plain" });
             const downloadLink = document.createElement("a");
@@ -36,6 +42,18 @@
             downloadLink.click();
             document.body.removeChild(downloadLink);
         });
+    </script>
+
+    <script>
+        document.getElementById("download_pdf").addEventListener("click", function () {
+            const pdfLink = document.getElementById("pdf_link").href
+            const download_link = document.createElement("a");
+            download_link.href = pdfLink
+            download_link.download = "Generated_document.pdf"
+            document.body.appendChild(download_link)
+            download_link.click()
+            document.body.removeChild(download_link)
+        })
     </script>
 
 </body>
