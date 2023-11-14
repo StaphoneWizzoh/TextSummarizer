@@ -36,7 +36,7 @@ def summarizer(text_string):
     response = co.summarize(
         text=text_string,
     )
-    return response
+    return response.summary
   
 def extract_and_generate(pdf_path):
   text = extract_pdf(pdf_path)
